@@ -1,4 +1,5 @@
 import DataGrid from 'react-data-grid';
+import data from './data';
 
 const columns = [
   { key: 'id', name: 'ID' },
@@ -13,7 +14,7 @@ const rows = [
 function App() {
   return (
     <>
-      <DataGrid columns={columns} rows={rows} />;
+      <DataGrid columns={columns} rows={data} />;
     </>
   );
 }
