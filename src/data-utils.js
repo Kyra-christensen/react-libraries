@@ -1,11 +1,12 @@
-export function generateColumns(dataArr) {
-  const keys = Object.keys(dataArr[0]);
+export function generateColumns(arr) {
+  const keys = Object.keys(arr[0]);
 
   const columns = keys.map(key => {
     return {
       key: key,
-      name: key
-        .map(word => word[0].toUperCase() + word.slice(1))
+      name: key.split(' ')
+        .map(word => word[0].toUpperCase() + word.slice(1))
+        .join(' ')
     };
   });
   return columns;
