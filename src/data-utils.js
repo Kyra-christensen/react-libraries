@@ -13,7 +13,20 @@ export function generateColumns(arr) {
 }
 
 export function howManyByCountry(arr) {
-  const object = arr.match(arr.country);
+  const countTotalCountries = arr.reduce((acc, cur) => {
+    if (acc[cur.country]) {
+      acc[cur.country].total = acc[cur.country].total + 1;
+    } else {
+      acc[cur.country] = {};
+      acc[cur.country].total = 1;
+    }
+    return acc;
+  }, {});
 
-  return object;
+  return Object.entries(countTotalCountries)
+    .map((country, i) => ({
+      country: country[0],
+      key: i,
+      totalCount: country[1].total,
+    }));
 }
