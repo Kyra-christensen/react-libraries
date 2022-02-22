@@ -11,3 +11,9 @@ export function generateColumns(arr) {
   });
   return columns;
 }
+
+export function howManyByCountry(arr) {
+  const object = arr.match(arr.country);
+
+  return object;
+}
